@@ -150,6 +150,11 @@ address {
     letter-spacing: 0.06em;
 }
 
+.button.link:hover,
+.button.link:focus {
+    background-color: #188CE8;
+}
+
 
 /* Features section */
 
