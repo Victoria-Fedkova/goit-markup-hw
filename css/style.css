@@ -1,0 +1,255 @@
+:root {
+    --primary-text-color: #212121;
+    --secondary-text-color: #757575;
+    --primary-white-color: #FFFFFF;
+    --accent-color: #2196F3;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* Палитра:
+основной цвет текста #212121 
+вторичный цвет текста #757575
+акцент #2196F3
+основной белый #FFFFFF
+вторичный цвет фона E5E5E5
+элементы лого #000000
+элементы футера rgba(255, 255, 255, 0.6)
+вторичный элемент футера rgba(255, 255, 255, 0.4) 
+
+Шрифты:
+Roboto: 400, 500, 700, 900
+Raleway: 700 
+*/
+
+body {
+    font-family: roboto, noto, segoe ui, arial, sans-serif;
+    font-style: normal;
+    background-color: var (--primary-white-color);
+    color: var (--primary-text-color);
+}
+
+address {
+    font-style: normal;
+}
+
+
+/* Site header */
+
+.page-header {
+    /* для позиционирования */
+}
+
+
+/* утилитарные классы линк и лист */
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    /* font-style: inherit; */
+}
+
+.list {
+    list-style: none;
+}
+
+
+/* логотип */
+
+.logo {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: black;
+    text-decoration: none;
+}
+
+.logo .web {
+    color: #2196F3
+}
+
+
+/* site navigation */
+
+.site-nav {
+    color: var (--primary-text-color);
+}
+
+.site-nav .link {
+    color: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.site-nav .link.current {
+    color: var(--accent-color);
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+    color: var(--accent-color);
+}
+
+
+/* contact links */
+
+.contacts .link {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.contacts .link:hover,
+.contacts .link:focus {
+    color: var(--accent-color);
+}
+
+
+/* Герой */
+
+.hero-section {
+    background-color: rgba(47, 48, 58, 0.8);
+}
+
+.hero-title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+}
+
+.button {
+    padding: 10px 32px;
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: center;
+    letter-spacing: 0.06em;
+}
+
+
+/* Features section */
+
+
+/* скрытый логически заголовок */
+
+.hiden-title {
+    display: none;
+}
+
+.section-subtitle {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.section-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
+}
+
+
+/* "our works" section */
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.works-description {
+    background-color: rgba(47, 48, 58, 0.8);
+    padding: 27px 83px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+}
+
+
+/* our team section */
+
+.team-section {
+    font-size: 16px;
+    line-height: 1.19;
+    /* text-align: center; */
+    letter-spacing: 0.03em;
+}
+
+.teammates {
+    font-weight: 500;
+}
+
+.teammates-position {
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+
+/* "our clients" section */
+
+
+/* Footer */
+
+.site-footer {
+    background-color: #2F303A;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-white-color);
+}
+
+.futer-logo {
+    color: var(--primary-white-color);
+}
+
+.footer-address .link {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-subtitle {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.copyrite {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+}
