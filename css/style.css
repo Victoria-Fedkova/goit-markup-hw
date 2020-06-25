@@ -45,7 +45,12 @@ address {
 
 /* Site header */
 
-.page-header {}
+
+/* .page-header {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+} */
 
 h1,
 h2,
@@ -100,11 +105,40 @@ img {
 
 /* site navigation */
 
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
 .site-nav {
+    display: flex;
+    align-items: center;
+    /* padding-top: 24px;
+    padding-bottom: 25px; */
     color: var (--primary-text-color);
 }
 
+.site-nav .logo {
+    margin-right: 85px;
+}
+
+.site-nav .list {
+    display: flex;
+}
+
+
+/* .site-nav .item+.item {
+    margin-left: 50px;
+} */
+
+.site-nav .item:not(:nth-last-child(1)) {
+    margin-right: 50px;
+}
+
 .site-nav .link {
+    display: block;
+    padding-bottom: 28px;
+    padding-top: 28px;
     color: inherit;
     font-weight: 500;
     font-size: 14px;
@@ -113,6 +147,8 @@ img {
 }
 
 .site-nav .link.current {
+    border-bottom: 4px solid var(--accent-color);
+    border-radius: 2px;
     color: var(--accent-color);
 }
 
@@ -124,7 +160,25 @@ img {
 
 /* contact links */
 
+.contacts {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    /* padding-top: 28px;
+    padding-bottom: 28px; */
+}
+
+.contacts .list {
+    display: flex;
+    align-items: center;
+}
+
+.contacts .item:not(:nth-last-child(1)) {
+    margin-right: 30px;
+}
+
 .contacts .link {
+    display: block;
     color: var(--secondary-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -238,6 +292,7 @@ img {
 .section.team {
     padding: 94px 215px;
     margin-bottom: 94px;
+    background-color: #F5F4FA;
     font-size: 16px;
     line-height: 1.19;
     /* text-align: center; */
