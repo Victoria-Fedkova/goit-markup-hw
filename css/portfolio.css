@@ -55,7 +55,7 @@ img {
 /* утилитарные классы контейнер, линк и лист */
 
 .container {
-    /* display: flex; */
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
@@ -121,6 +121,10 @@ img {
 .site-nav .link:hover,
 .site-nav .link:focus {
     color: var(--accent-color);
+}
+
+.contacts .list {
+    display: flex;
 }
 
 
