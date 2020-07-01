@@ -65,7 +65,7 @@ img {
 /* утилитарные классы линк и лист */
 
 .container {
-    display: flex;
+    /* display: flex; */
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
@@ -82,6 +82,10 @@ img {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.content-img {
+    display: block;
 }
 
 
@@ -165,8 +169,6 @@ img {
     display: flex;
     align-items: center;
     margin-left: auto;
-    /* padding-top: 28px;
-    padding-bottom: 28px; */
 }
 
 .contacts .list {
@@ -256,7 +258,32 @@ img {
     margin-bottom: 94px;
 }
 
-.section-subtitle {
+.features .list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features-list .item {
+    display: inline-block;
+    width: calc( ( 100% - 90px) / 4);
+}
+
+
+/* .features-list .item:not(:nth-last-child(1)) {
+    margin-right: 30px;
+}  */
+
+.features-img {
+    width: 270px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F4FA;
+    margin-bottom: 30px;
+}
+
+.features .item .section-subtitle {
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 14px;
@@ -285,6 +312,18 @@ img {
     letter-spacing: 0.03em;
 }
 
+.works-list .list {
+    display: flex;
+}
+
+.works-list .item {
+    width: calc(( 100% - 60px) / 3);
+}
+
+.works-list .item:not(:nth-last-child(1)) {
+    margin-right: 30px;
+}
+
 .works-description {
     background-color: rgba(47, 48, 58, 0.8);
     padding: 27px 83px;
@@ -301,13 +340,41 @@ img {
 /* our team section */
 
 .section.team {
-    padding: 94px 215px;
+    padding-top: 94px;
+    padding-bottom: 94px;
     margin-bottom: 94px;
     background-color: #F5F4FA;
     font-size: 16px;
     line-height: 1.19;
     /* text-align: center; */
     letter-spacing: 0.03em;
+}
+
+.section.team .container {
+    margin-bottom: 0;
+}
+
+.teammates-photo img {
+    display: block;
+}
+
+.team-list .list {
+    display: flex;
+}
+
+
+/* вот тутдва козлячих селектора, но иначе ломается */
+
+.team-list>.list>.item {
+    width: calc( ( 100% - 90px) / 4);
+    background-color: var(--primary-white-color);
+    text-align: center;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team-list>.list>.item:not(:nth-last-child(1)) {
+    margin-right: 30px;
 }
 
 .teammates {
@@ -322,14 +389,62 @@ img {
     color: var(--secondary-text-color);
 }
 
+.social-links.list {
+    display: flex;
+    /* padding-left: 32px;
+    padding-right: 32px; */
+    padding-bottom: 24px;
+    justify-content: center;
+}
+
+.social-links.list .item {
+    display: block;
+    width: 44px;
+    height: 44px;
+    /* border: 1px solid var(--accent-color);
+    border-radius: 50px; */
+}
+
+.social-links.list .item:not(:nth-last-child(1)) {
+    margin-right: 10px;
+}
+
+.social-links .item:hover,
+.social-links .item:focus {
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    /* border-radius: 100px; */
+}
+
 
 /* "our clients" section */
+
+.clients .list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clients.list .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 90px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+}
+
+.clients.list .item:hover,
+.clients.list .item:focus {
+    border: 1px solid var(--accent-color);
+}
 
 
 /* Footer */
 
 .site-footer {
-    padding: 57px 214px 21px;
+    padding-top: 57px;
+    padding-bottom: 21px;
     background-color: #2F303A;
     font-weight: 400;
     font-size: 14px;
@@ -338,7 +453,31 @@ img {
     color: var(--primary-white-color);
 }
 
-.futer-logo {
+.main-footer {
+    padding-bottom: 50px;
+    margin-bottom: 18px;
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-footer .logo {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-address {
+    margin-right: 69px;
+}
+
+.footer-address .item {
+    display: block;
+}
+
+.footer-address .item:not(:nth-last-child(1)) {
+    margin-bottom: 9px;
+}
+
+.footer-logo {
     color: var(--primary-white-color);
 }
 
@@ -346,10 +485,36 @@ img {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.social-links .list {
+    display: flex;
+}
+
+.social-links .item:not(:nth-last-child(1)) {
+    margin-right: 10px;
+}
+
 .footer-subtitle {
+    display: block;
+    margin-bottom: 20px;
     font-weight: 700;
     text-transform: uppercase;
 }
+
+.main-footer .subscribe {
+    margin-left: auto;
+}
+
+.enter.button {
+    min-width: 358px;
+    margin-right: 12px;
+    background: #2F303A;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe .form {}
 
 .copyrite {
     font-weight: 400;
