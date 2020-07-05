@@ -173,14 +173,29 @@ img {
 
 /* contact links */
 
-.contacts .list a {
+.contacts .item {
     display: flex;
     align-items: center;
 }
 
-.contacts .item img {
-    display: block;
+.contacts .item::before {
+    display: flex;
+    align-items: center;
+    content: "";
+    width: 16px;
+    height: 12px;
+    background-image: url(../images/envelope.svg);
+    background-size: contain;
     margin-right: 10px;
+    background-repeat: no-repeat;
+}
+
+.contacts .item:nth-last-child(1)::before {
+    width: 10px;
+    height: 15px;
+    background-image: url(../images/smartphone.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .contacts .item:not(:nth-last-child(1)) {
@@ -228,12 +243,16 @@ img {
 }
 
 .button:hover,
-.button:active,
 .button:focus {
     background: #2196F3;
     color: var(--primary-white-color);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 3px 1px rgba(0, 0, 0, 0.1);
     outline: none;
+}
+
+.footer.button-secondary:hover,
+.footer.button-secondary:focus {
+    background-color: #188CE8;
 }
 
 .filter .list {
@@ -269,6 +288,7 @@ img {
 }
 
 .card-content {
+    padding: 20px 24px;
     border-bottom: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
@@ -360,6 +380,21 @@ img {
     border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
+    background-image: url(../images/instagram-1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.social-links .item:nth-child(2) {
+    background-image: url(../images/twitter-1.svg);
+}
+
+.social-links .item:nth-child(3) {
+    background-image: url(../images/facebook-1.svg);
+}
+
+.social-links .item:nth-child(4) {
+    background-image: url(../images/linkedin-1.svg);
 }
 
 .social-links .item:not(:nth-last-child(1)) {
@@ -395,6 +430,29 @@ img {
     line-height: 1.87;
     text-align: center;
     letter-spacing: 0.06em;
+}
+
+.futer.button {
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.footer.button-secondary {
+    display: inline-flex;
+}
+
+.footer.button-secondary::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icon-send.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .enter.button-secondary {
