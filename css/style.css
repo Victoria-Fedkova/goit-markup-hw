@@ -179,12 +179,13 @@ img {
 
 /* иконки в адресные ссылки, дальше будут SVG спрайтами */
 
-.contacts .item {
+.contacts .item .link {
     display: flex;
     align-items: center;
 }
 
-.contacts .item::before {
+
+/*.contacts .item::before {
     display: flex;
     align-items: center;
     content: "";
@@ -203,6 +204,7 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
 }
+*/
 
 .contacts .item:not(:nth-last-child(1)) {
     margin-right: 30px;
@@ -220,6 +222,11 @@ img {
 .contacts .link:hover,
 .contacts .link:focus {
     color: var(--accent-color);
+}
+
+.contacts .icon {
+    fill: currentColor;
+    margin-right: 10px;
 }
 
 
@@ -359,6 +366,10 @@ img {
 
 /* "our works" section */
 
+.section.works .container {
+    padding-bottom: 94px;
+}
+
 .section-title {
     margin-bottom: 50px;
     font-weight: 700;
@@ -447,47 +458,68 @@ img {
 
 .social-links.list {
     display: flex;
-    /* padding-left: 32px;
-    padding-right: 32px; */
     padding-bottom: 24px;
     justify-content: center;
-}
-
-.social-links.list .item {
-    display: block;
-    width: 44px;
-    height: 44px;
-    border: 1px solid transparent;
-    border-radius: 50px;
-    background-image: url(../images/instagram-2.svg);
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
 /* сслыки на соц сети будут SVG спрайтами */
 
+.social-links.list .item {}
+
+.social-links.list .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: block; */
+    width: 44px;
+    height: 44px;
+    /* border: 1px solid #000; */
+    border-radius: 50px;
+    /* background-image: url(../images/instagram-2.svg);
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+
+/* .social-links.list .item a {
+    display: inline-block;
+} */
+
+
+/*
 .social-links.list .item:nth-child(2) {
     background-image: url(../images/facebook-2.svg);
 }
 
 .social-links.list .item:nth-child(3) {
-    background-image: url(../images/twitter-2.svg);
+     background-image: url(../images/twitter-2.svg);
 }
 
 .social-links.list .item:nth-child(4) {
-    background-image: url(../images/linkedin-2.svg);
+ background-image: url(../images/linkedin-2.svg); 
 }
+*/
 
 .social-links.list .item:not(:nth-last-child(1)) {
     margin-right: 10px;
 }
 
-.social-links .item:hover,
-.social-links .item:focus {
+.social-links .link:hover,
+.social-links .link:focus {
     background-color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    /* border-radius: 100px; */
+    /* border: 1px solid var(--accent-color); */
+    border-radius: 50px;
+}
+
+.social-links .icon {
+    --color1: #AFB1B8;
+    --color2: #AFB1B8;
+}
+
+.social-links .item:hover .icon {
+    --color1: #FFFFFF;
+    --color2: #FFFFFF;
 }
 
 
@@ -503,7 +535,7 @@ img {
     justify-content: space-between;
 }
 
-.clients.list .item {
+.clients.list .link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -511,11 +543,17 @@ img {
     height: 90px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    color: #AFB1B8;
 }
 
-.clients.list .item:hover,
-.clients.list .item:focus {
+.client.icon {
+    fill: currentColor;
+}
+
+.clients.list .link:hover,
+.clients.list .link:focus {
     border: 1px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 
@@ -570,34 +608,34 @@ img {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.social-links .list {
+.footer-social-links.list {
     display: flex;
 }
 
-.social-links .item {
+.footer-social-links .link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    width: 43px;
+    height: 43px;
     border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
-    background-image: url(../images/instagram-1.svg);
+    /* background-image: url(../images/instagram-1.svg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
 }
 
 .social-links .item:nth-child(2) {
-    background-image: url(../images/twitter-1.svg);
+    /* background-image: url(../images/twitter-1.svg); */
 }
 
 .social-links .item:nth-child(3) {
-    background-image: url(../images/facebook-1.svg);
+    /* background-image: url(../images/facebook-1.svg); */
 }
 
 .social-links .item:nth-child(4) {
-    background-image: url(../images/linkedin-1.svg);
+    /* background-image: url(../images/linkedin-1.svg); */
 }
 
 .social-links .item:not(:nth-last-child(1)) {
@@ -606,8 +644,9 @@ img {
 
 .social-links .item:hover,
 .social-links .item:active {
-    border: 1px solid var(--accent-color);
+    /* border: 1px solid var(--accent-color); */
     background-color: var(--accent-color);
+    border-radius: 50%;
 }
 
 .footer-subtitle {
@@ -628,9 +667,16 @@ img {
 
 .footer.button {
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer.button::after {
+.footer.button .icon {
+    margin-left: 10px;
+}
+
+
+/* .footer.button::after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -641,10 +687,12 @@ img {
     background-image: url(../images/icon-send.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-}
+    background-size: contain; 
 
-.enter.button {
+
+}*/
+
+.input-place.button {
     min-width: 358px;
     margin-right: 12px;
     background: #2F303A;

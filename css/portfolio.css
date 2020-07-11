@@ -178,7 +178,8 @@ img {
     align-items: center;
 }
 
-.contacts .item::before {
+
+/* .contacts .item::before {
     display: flex;
     align-items: center;
     content: "";
@@ -196,7 +197,7 @@ img {
     background-image: url(../images/smartphone.svg);
     background-size: contain;
     background-repeat: no-repeat;
-}
+} */
 
 .contacts .item:not(:nth-last-child(1)) {
     margin-right: 30px;
@@ -213,6 +214,11 @@ img {
 .contacts .link:hover,
 .contacts .link:focus {
     color: var(--accent-color);
+}
+
+.contacts .icon {
+    fill: currentColor;
+    margin-right: 10px;
 }
 
 
@@ -371,7 +377,7 @@ img {
     display: flex;
 }
 
-.social-links .item {
+.social-links .link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -380,12 +386,19 @@ img {
     border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
-    background-image: url(../images/instagram-1.svg);
+    color: var(--primary-white-color);
+    /* background-image: url(../images/instagram-1.svg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
 }
 
-.social-links .item:nth-child(2) {
+.social-links.icon {
+    --color1: #FFFFFF;
+    --color2: #FFFFFF;
+}
+
+
+/* .social-links .item:nth-child(2) {
     background-image: url(../images/twitter-1.svg);
 }
 
@@ -395,16 +408,17 @@ img {
 
 .social-links .item:nth-child(4) {
     background-image: url(../images/linkedin-1.svg);
-}
+} */
 
 .social-links .item:not(:nth-last-child(1)) {
     margin-right: 10px;
 }
 
-.social-links .item:hover,
-.social-links .item:active {
-    border: 1px solid var(--accent-color);
+.social-links .link:hover,
+.social-links .link:active {
+    /* border: 1px solid var(--accent-color); */
     background-color: var(--accent-color);
+    border-radius: 50px;
 }
 
 .footer-subtitle {
@@ -439,9 +453,16 @@ img {
 
 .footer.button-secondary {
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer.button-secondary::after {
+.footer.button-secondary .icon {
+    margin-left: 10px;
+}
+
+
+/* .footer.button-secondary::after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -453,7 +474,7 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-}
+} */
 
 .enter.button-secondary {
     min-width: 358px;
