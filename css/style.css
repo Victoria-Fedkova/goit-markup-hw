@@ -3,6 +3,7 @@
     --secondary-text-color: #757575;
     --accent-color: #2196F3;
     --primary-white-color: #FFFFFF;
+    --main-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -152,6 +153,20 @@ img {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    transition: color 250ms var(--main-timing-function);
+}
+
+.site-nav .link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    transform: scaleX(0);
+    transition: transform 250ms var(--main-timing-function);
 }
 
 .site-nav .link.current::after {
@@ -163,6 +178,13 @@ img {
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 4px;
+    transform: scaleX(1);
+}
+
+.site-nav .link:hover::after,
+.site-nav .link:focus::after {
+    color: var(--accent-color);
+    transform: scaleX(1);
 }
 
 .site-nav .link:hover,
@@ -190,6 +212,8 @@ img {
 .contacts .item .link {
     display: flex;
     align-items: center;
+    padding-bottom: 32px;
+    padding-top: 32px;
 }
 
 
@@ -225,6 +249,7 @@ img {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    transition: color 250ms var(--main-timing-function);
 }
 
 .contacts .link:hover,
@@ -274,13 +299,15 @@ img {
     line-height: 1.87;
     text-align: center;
     letter-spacing: 0.06em;
+    transition: color 250ms var(--main-timing-function), background-color 250ms var(--main-timing-function);
 }
 
 .button.link:hover,
 .button.link:focus,
 .footer.button:hover,
 .footer.button:focus {
-    background-color: #188CE8;
+    background-color: var(--primary-white-color);
+    color: var(--accent-color);
 }
 
 
@@ -341,9 +368,10 @@ img {
     background-image: url(../images/astronaut.svg);
 }
 
-.features-list .item:hover {
+
+/* .features-list .item:hover {
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
-}
+} */
 
 
 /* .features-list .item:not(:nth-last-child(1)) {
@@ -491,7 +519,10 @@ img {
 
 /* сслыки на соц сети будут SVG спрайтами */
 
-.social-links.list .item {}
+
+/* .social-links.list .item {
+    color: #AFB1B8;
+} */
 
 .social-links.list .link {
     display: flex;
@@ -502,9 +533,12 @@ img {
     height: 44px;
     /* border: 1px solid #000; */
     border-radius: 50px;
+    color: #AFB1B8;
+    background-color: var(--primary-white-color);
     /* background-image: url(../images/instagram-2.svg);
     background-position: center;
     background-repeat: no-repeat; */
+    transition: background-color 250ms var(--main-timing-function);
 }
 
 
@@ -531,21 +565,17 @@ img {
     margin-right: 10px;
 }
 
-.social-links .link:hover,
-.social-links .link:focus {
+.social-links.list .link:hover,
+.social-links.list .link:focus {
+    color: var(--primary-white-color);
     background-color: var(--accent-color);
     /* border: 1px solid var(--accent-color); */
     border-radius: 50px;
 }
 
-.social-links .icon {
-    --color1: #AFB1B8;
-    --color2: #AFB1B8;
-}
-
-.social-links .item:hover .icon {
-    --color1: #FFFFFF;
-    --color2: #FFFFFF;
+.social-links.list .icon {
+    fill: currentColor;
+    transition: color 250ms var(--main-timing-function);
 }
 
 
@@ -570,6 +600,7 @@ img {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     color: #AFB1B8;
+    transition: color 250ms var(--main-timing-function), border-color 250ms var(--main-timing-function);
 }
 
 .client.icon {
@@ -645,11 +676,17 @@ img {
     width: 43px;
     height: 43px;
     border: 1px solid transparent;
+    color: var(--primary-white-color);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     /* background-image: url(../images/instagram-1.svg);
     background-repeat: no-repeat;
     background-position: center; */
+    transition: background-color 250ms var(--main-timing-function);
+}
+
+.social-links.icon {
+    fill: currentColor;
 }
 
 .social-links .item:nth-child(2) {
@@ -668,8 +705,8 @@ img {
     margin-right: 10px;
 }
 
-.social-links .item:hover,
-.social-links .item:active {
+.social-links .link:hover,
+.social-links .link:active {
     /* border: 1px solid var(--accent-color); */
     background-color: var(--accent-color);
     border-radius: 50%;
@@ -699,6 +736,7 @@ img {
 
 .footer.button .icon {
     margin-left: 10px;
+    fill: currentColor;
 }
 
 
